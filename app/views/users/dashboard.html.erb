@@ -1,0 +1,6 @@
+<% current_user.courses.each do  |course| %>
+<p><%= course.name %></p>
+<%= link_to 'post', new_occurrence_path(course.id) %>
+<% end %>
+
+<p><%= link_to 'Create a Class', new_course_path %></p>

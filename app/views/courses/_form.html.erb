@@ -1,0 +1,9 @@
+<%= simple_form_for(course) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :duration,  input_html: { type: 'number' } %>
+  <%= f.input :price,  input_html: { type: 'number' } %>
+  <%= f.input :location %>
+  <%= f.input :capacity,  input_html: { type: 'number' } %>
+  <%= f.submit %>
+<% end %>
