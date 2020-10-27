@@ -1,3 +1,27 @@
+
+.welcome {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  font-size: 2em;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+  padding: 10px;
+}
+
+.info-card {
+  padding: 10px;
+}
+
+.courses-card {
+  padding: 10px;
+}
+
+.calendar-card {
+  padding: 10px;
+
 #teacher-dashboard {
   .green-block {
     width: cover;
@@ -14,4 +38,5 @@
     background-color: #217167;
     opacity: 87%;
   }
+
 }
