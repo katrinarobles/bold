@@ -1,1 +1,59 @@
 // Specific CSS for your home-page
+
+#search-bar {
+  .btn-ghost {
+    color: white;
+    border: 1px solid white;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 1s ease;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20px;
+  }
+
+  .btn-ghost:hover {
+    opacity: 1;
+    color: white;
+  }
+
+  h1 {
+    color: #005B50;
+  }
+
+  .background-image {
+    height: calc(100vh - 66px);
+    width: auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .search-bar {
+    border-radius: 12px;
+    height: 60px;
+    padding-left: 10px;
+    width: 600px;
+    border-color: white;
+    opacity: 76%;
+  }
+
+  .search-bar-div {
+  margin-top: 50px;
+  margin-left: 350px;
+
+  }
+
+  .bold-logo {
+    height: 100px;
+    width: 200px;
+    margin-top: 200px;
+    margin-left: 550px;
+
+  }
+
+  .bold-logo-div {
+    // margin-top: 200px;
+  }
+}

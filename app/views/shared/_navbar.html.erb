@@ -1,11 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+<div class="navbar navbar-expand-sm navbar-light navbar-bold sticky-top">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+    <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <% end %>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,10 +27,45 @@
           </div>
         </li>
       <% else %>
+
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-ghost"%>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+
+<!-- /* Bold */
+
+position: absolute;
+width: 144px;
+height: 57px;
+left: 33px;
+top: 0px;
+
+mix-blend-mode: lighten;
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+
+
+/* Bold */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+font-family: Pacifico;
+font-style: normal;
+font-weight: normal;
+font-size: 64px;
+line-height: 112px;
+
+color: #005B50;
+
+border: 1px solid #FFFFFF;
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+ -->

@@ -1,3 +1,4 @@
+
 .welcome {
   font-family: 'Pacifico', cursive;
   letter-spacing: 2px;
@@ -20,4 +21,22 @@
 
 .calendar-card {
   padding: 10px;
+
+#teacher-dashboard {
+  .green-block {
+    width: cover;
+    height: 274px;
+    background-color: #217167;
+    opacity: 87%;
+  }
+}
+
+#student-dashboard {
+  .green-block {
+    width: cover;
+    height: 274px;
+    background-color: #217167;
+    opacity: 87%;
+  }
+
 }
