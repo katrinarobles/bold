@@ -1,6 +1,34 @@
-<% current_user.courses.each do  |course| %>
-<p><%= course.name %></p>
-<%= link_to 'post', new_occurrence_path(course.id) %>
+<% if current_user.teacher %>
+  <div id="teacher-dashboard">
+    <div class="mt-4">
+      <div class="green-block">
+      </div>
+      <h2>This is the teacher dashboard</h2>
+
+      <h3>These are my courses</h3>
+      <% @courses.each do  |course| %>
+        <p><%= course.name %> - <%= link_to 'post', new_course_occurence_path(course.id) %> | <%= link_to 'destroy', course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+      <% end %>
+
+      <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
+
+      <h3>These are my occurences</h3>
+
+      <% @courses.each do  |course| %>
+        <% course.occurences.each do |occurence| %>
+        <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to 'destroy', course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div id="student-dashboard">
+    <div class="mt-4">
+      <div class="green-block">
+      </div>
+      <h2>This is the student dashboard</h2>
+    </div>
+  </div>
 <% end %>
 
-<p><%= link_to 'Create a Class', new_course_path %></p>
+

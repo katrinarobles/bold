@@ -1,12 +1,31 @@
-.navbar-lewagon {
+.navbar-bold {
   justify-content: space-between;
-  background: white;
+  background-color: #018a79;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-bold .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-bold .navbar-brand img {
+  width: 80px;
 }
+
+.btn-ghost {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+
+
+
+

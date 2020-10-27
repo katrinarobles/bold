@@ -8,6 +8,10 @@
         <form class="search-form">
           <input class="search-bar" type="search" placeholder="Type of Yoga">
           <a class="btn btn-ghost" href="#">Search</a>
+          <h1>Pages#home</h1>
+          <% @courses.each do  |course| %>
+          <p> <%= course.name %> - <%= link_to 'details', course_path(course) %> </p>
+          <% end %>
         </form>
       </div>
   </div>
