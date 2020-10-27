@@ -1,8 +1,18 @@
 <h2><%= @course.name %> </h2>
-<h3><%= @course.user %></h3>
+<p> <%= @course.description %> </p>
+</ul>
+<h3><%= @course.user.name %></h3>
 <% if user_signed_in? %>
-  <%= link_to 'book', new_course_booking_path(@course) %>
+  <% if !current_user.teacher %>
+    <%= link_to 'book', new_course_booking_path(@course) %>
+  <% elsif @course.user == current_user %>
+    <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
+  <% end %>
 <% else %>
-  <%= link_to 'sign in to book', new_user_session_path %>
+  <% if !current_user.teacher %>
+    <%= link_to 'sign in to book', new_user_session_path %>
+  <% else %>
+    <%= link_to 'sign in to edit', new_user_session_path %>
+  <% end %>
 <% end %>
 
