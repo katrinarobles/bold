@@ -1,5 +1,19 @@
-<h1>Pages#home</h1>
-<% @courses.each do  |course| %>
-  <p> <%= course.name %> - <%= link_to 'details', course_path(course) %> </p>
-<% end %>
+<div id="search-bar">
+  <div class="background-image" style="background-image: url(<%= asset_path'landing_background.jpg'%>)">
+    <div class="bold-logo-div">
+      <img class="bold-logo" src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" alt="bold-logo">
+    </div>
+
+      <div class="search-bar-div">
+        <form class="search-form">
+          <input class="search-bar" type="search" placeholder="Type of Yoga">
+          <a class="btn btn-ghost" href="#">Search</a>
+          <h1>Pages#home</h1>
+          <% @courses.each do  |course| %>
+          <p> <%= course.name %> - <%= link_to 'details', course_path(course) %> </p>
+          <% end %>
+        </form>
+      </div>
+  </div>
+</div>
 
