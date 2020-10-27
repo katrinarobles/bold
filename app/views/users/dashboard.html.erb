@@ -1,16 +1,31 @@
-<h2>These are my courses</h2>
+<div class="container">
+  <div class="info-card">
+    <p class='welcome'> Welcome <%= current_user.name.capitalize %>, </p>
+    <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603820702/Screenshot_2020-10-27_at_09.24.58_grsiu5.png", class: "avatar-bordered", alt: "avatar-bordered" %>
+    <p> </p>
+    <p>Basic info:</p>
+    <p>Email: <%= current_user.email%> <p>
+    <p>Address: <%= current_user.address %><p>
+    <p>Phone: <%= current_user.telephone%> <p>
+  </div>
+  <div class="courses-card">
+    <h2>These are my courses</h2>
 
-<% @courses.each do  |course| %>
-  <p><%= course.name %> - <%= link_to 'post', new_course_occurence_path(course.id) %> | <%= link_to 'destroy', course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
-<% end %>
+    <% @courses.each do  |course| %>
+      <p><%= course.name %> - <%= link_to 'POST', new_course_occurence_path(course.id) %> | <%= link_to 'EDIT', edit_course_path(course) %> | <%= link_to 'DELETE', course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+    <% end %>
 
-<p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
+    <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
 
-<h2>These are my occurences</h2>
+    <h2>These are my occurences</h2>
 
-<% @courses.each do  |course| %>
-  <% course.occurences.each do |occurence| %>
-  <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to 'destroy', course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
-  <% end %>
-<% end %>
-
+    <% @courses.each do  |course| %>
+      <% course.occurences.each do |occurence| %>
+      <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to 'destroy', course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="calendar">
+    <h2>Calendar goes in here</h2>
+  </div>
+</div>
