@@ -1,4 +1,4 @@
 <h1> These are the list of courses from this teacher(user)</h1>
 <% @courses.each do  |course| %>
-<%= course.name %>
+  <p> <%= course.name %> - <%= link_to 'destroy', course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
 <% end %>

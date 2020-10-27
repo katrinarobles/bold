@@ -1,0 +1,4 @@
+<%= simple_form_for [ @course, @booking ] do |f| %>
+  <%= f.association :occurence, collection: @occurences %>
+  <%= f.submit %>
+<% end %>

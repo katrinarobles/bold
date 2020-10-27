@@ -1,3 +1,5 @@
-<div class="container">
-<%= render "form", occurence: @occurence %>
-</div>
+<%= simple_form_for [ @course, @occurence ] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.submit %>
+<% end %>

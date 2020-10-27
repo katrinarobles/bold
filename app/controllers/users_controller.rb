@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show]
-
-  def dashboard
+  def show
   end
 
-  def show
+  def dashboard
+    @courses = current_user.courses
   end
 
   private
