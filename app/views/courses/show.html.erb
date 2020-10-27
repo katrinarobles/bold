@@ -1,1 +1,8 @@
-<%= @course.name %>
+<h2><%= @course.name %> </h2>
+<h3><%= @course.user %></h3>
+<% if user_signed_in? %>
+  <%= link_to 'book', new_course_booking_path(@course) %>
+<% else %>
+  <%= link_to 'sign in to book', new_user_session_path %>
+<% end %>
+
