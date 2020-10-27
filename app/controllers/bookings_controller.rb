@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @course = Course.find(params[:course_id])
-    @booking.course = @course
+    # @booking.course = @course
     @booking.user = current_user
     @booking.save
     redirect_to dashboard_path
