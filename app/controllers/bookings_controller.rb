@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
-    @occurences = Occurence.all
     @course = Course.find(params[:course_id])
+    @occurences_all = Occurence.all
+    @occurences = Occurence.where(course: @course)
   end
 
   def create
