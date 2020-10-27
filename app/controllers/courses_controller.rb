@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit, :update, :destroy]
+  before_action :find_course, only: [ :show, :edit, :update, :destroy ]
   def index
-    @course = Course.all
+    @courses = current_user.courses
   end
 
   def show
@@ -22,12 +22,12 @@ class CoursesController < ApplicationController
 
   def update
     @course.update(course_params)
-    redirect_to user_path
+    redirect_to dashboard_path
   end
 
   def destroy
     @course.destroy
-    redirect_to user_path
+    redirect_to dashboard_path
   end
 
   private
