@@ -19,7 +19,10 @@
         </div>
       </div>
       <div class="courses-card">
-        <h3>Your Listed Courses:</h3>
+        <div class="header">
+          <h3>Your Listed Courses:</h3>
+        </div>
+
         <% @courses.each do  |course| %>
           <p><%= course.name %> - <%= link_to 'CREATE A NEW EVENT', new_course_occurence_path(course.id) %> |
             <%= link_to edit_course_path(course) do %><i class="far fa-edit"></i><% end %> |
@@ -27,16 +30,21 @@
            <% end %>
         <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
 
-        <h3>Your Upcoming Events:</h3>
+        <div class="header">
+          <h3>Your Upcoming Events:</h3>
+        </div>
 
         <% @courses.each do  |course| %>
           <% course.occurences.each do |occurence| %>
-          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to 'destroy', course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %>
+              <i class="far fa-trash-alt"></i> <% end %>
+          </p>
           <% end %>
         <% end %>
       </div>
       <div class="calendar">
         <h2>Calendar goes in here</h2>
+        <img src='https://citynews-today.stgy.ovh/~media/horizontal-hi/61364967865900/calendario-scolastico-2018-2019-2.jpg' width=300>
       </div>
     </div>
   </div>
