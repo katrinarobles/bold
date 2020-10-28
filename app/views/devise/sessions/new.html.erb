@@ -1,10 +1,10 @@
 <div class="container-lg">
     <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png", class: "img-fluid img-smaller" %>
 
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="row">
     <div class="col-md-4">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,
