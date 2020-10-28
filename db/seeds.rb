@@ -87,11 +87,11 @@ puts 'Finished!'
 
 
 puts 'Creating 3 occurences for each course'
-# times = ["7:00", "9:00", "11:00", "16:00", "18:00", "20:00"]
+times = ["7:00", "9:00", "11:00", "16:00", "18:00", "20:00"]
 Course.all.each do |course|
   3.times do
     occurence = Occurence.new(
-      date: "#{Faker::Time.forward(days: 6,  period: :day, format: :short)}",
+      date: "#{Faker::Time.forward(days: 6,  period: :day)}",
       capacity: (10..20).to_a.sample
     )
     occurence.course = course
