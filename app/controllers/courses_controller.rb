@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = current_user.courses
+
   end
 
   def show
@@ -12,6 +13,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
   end
+
   def create
     @course = Course.new(course_params)
     @course.user = current_user

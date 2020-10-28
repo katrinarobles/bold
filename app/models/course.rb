@@ -10,4 +10,7 @@ class Course < ApplicationRecord
 
   validates_associated :occurences
   validates :user, presence: true
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end

@@ -10,10 +10,14 @@ require 'json'
 require 'open-uri'
 require 'faker'
 
+
 Booking.destroy_all
 Occurence.destroy_all
 Course.destroy_all
 User.destroy_all
+
+
+
 
 # url = 'https://pixabay.com/api/?key=8552570-540dab6f18162a9471dc11307&q=face&image_type=photo&pretty=true'
 # images_serialized = open(url).read
@@ -21,6 +25,7 @@ User.destroy_all
 
 url = 'https://source.unsplash.com/500x500/?face'
 addresses = ['Via Solferino, 34, 20121 Milano MI', 'Largo la Foppa, 5, 20121 Milano MI', 'Galleria del Corso, 4, 20122 Milano MI', 'Via S. Maurilio, 20, 20123 Milano MI', 'Via Palestro, 16, 20121 Milano MI', 'Via Fatebenefratelli, 2, 20121 Milano MI', 'Via dei Fabbri, 1, 20123 Milano MI', 'Via San Vittore, 2, 20123 Milano MI', 'Via Archimede, 14, 20129 Milano MI', 'Via Conchetta, 8, 20136 Milano MI', 'Alzaia Naviglio Pavese, 78/3, 20142 Milano MI', 'Via Tortona, 56, 20144 Milano MI', 'Via Lazzaro Spallanzani, 16, 20129 Milano MI', 'Via Clerici, 5, 20121 Milano MI', 'Via Tivoli, 3, 20121 Milano MI']
+
 
 puts 'Creating 10 teachers'
 t_count = 1
