@@ -1,6 +1,6 @@
 <% if current_user.teacher %>
   <%= simple_form_for [ @course, @occurence ] do |f| %>
-    <%= f.input :date %>
+    <%= f.input :date, input_html: {class: "datepicker"} %>
     <%= f.input :capacity %>
     <%= f.submit %>
   <% end %>
