@@ -1,24 +1,56 @@
+<<<<<<< HEAD
+#dashboard {
+  background-color: #ffffff;
+  margin-left: 0px;
+
+  .welcome {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
+    font-size: 2em;
+    margin-left: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+=======
 
 .welcome {
   font-family: 'Pacifico', cursive;
   letter-spacing: 2px;
   font-size: 2em;
 }
+>>>>>>> b118ba9bb099de29b4515d1a3353892e80a7bd8e
 
-.container {
-  margin: 20px;
-  display: flex;
-  padding: 10px;
-}
+  .image {
+    text-align: center;
+  }
 
-.info-card {
-  padding: 10px;
-}
+  .header {
+    margin-bottom: 50px;
 
-.courses-card {
-  padding: 10px;
-}
+  }
+  .info-card {
+    padding: 10px;
+  }
 
+  .courses-card {
+    padding: 10px;
+  }
+
+  .calendar-card {
+    padding: 10px;
+    text-align: center;
+  }
+
+// background-color: #217167;
+
+<<<<<<< HEAD
+=======
 .calendar-card {
   padding: 10px;
 
@@ -39,4 +71,6 @@
     opacity: 87%;
   }
 
+>>>>>>> b118ba9bb099de29b4515d1a3353892e80a7bd8e
 }
+
