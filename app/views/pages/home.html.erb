@@ -10,6 +10,10 @@
         <a class="btn btn-ghost" href="#">Search</a>
       <!--     <%= link_to "search", courses_path %> -->
           <h1>Pages#home</h1>
+
+          <% @courses.each do  |course| %>
+          <p> <%= course.name %> - <%= course.user.name %> - <%= link_to 'details', course_path(course) %> </p>
+          <% end %>
         </form>
       </div>
   </div>

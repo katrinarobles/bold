@@ -1,17 +1,44 @@
-#teacher-dashboard {
-  .green-block {
-    width: cover;
-    height: 274px;
-    background-color: #217167;
-    opacity: 87%;
+#dashboard {
+  background-color: #ffffff;
+  margin-left: 0px;
+
+  .welcome {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
+    font-size: 2em;
+    margin-left: 10px;
   }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0px;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+
+  .image {
+    text-align: center;
+  }
+
+  .header {
+    margin-bottom: 50px;
+
+  }
+  .info-card {
+    padding: 10px;
+  }
+
+  .courses-card {
+    padding: 10px;
+  }
+
+  .calendar-card {
+    padding: 10px;
+    text-align: center;
+  }
+
+// background-color: #217167;
+
 }
 
-#student-dashboard {
-  .green-block {
-    width: cover;
-    height: 274px;
-    background-color: #217167;
-    opacity: 87%;
-  }
-}
