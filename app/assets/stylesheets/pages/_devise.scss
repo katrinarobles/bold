@@ -19,7 +19,23 @@
   padding: 40px;
 }
 
+.forgot-header{
+  color: #018a79;
+  font-family: roboto;
+  padding: 40px;
+}
+
 .row-signup{
+  width: 100%;
+  place-content: center;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-right: 0px;
+}
+
+.row-forgot{
   width: 100%;
   place-content: center;
   text-align: left;
