@@ -1,11 +1,18 @@
-<h2><%= @course.name %> </h2>
-<p> <%= @course.description %> </p>
+<div class="container-class" style="margin: 20px; border: 2px solid #018a79; text-align: center; height: auto;">
+  <h2 style="padding: 10px; color: #018a79;"><%= @course.name %> </h2>
+  <p> <strong><%= @course.description %></strong> </p>
+
 <ul>
+<div class="occurence" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; border-radius: 5px; padding: 20px;">
  <% @course.occurences.each do |occurence| %>
-    <li> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.capacity - occurence.bookings.size %> spots left
-    </li>
+
+<%= render "card", locals: {occurence: occurence} %>
+
+
+
+
 <% end %>
-</ul>
+</div>
 <h3> <%= link_to "/users/#{@course.user.id}" do %><%= @course.user.name %></h3> <% end %>
 <% if user_signed_in? %>
   <% if !current_user.teacher %>
@@ -14,6 +21,6 @@
     <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
   <% end %>
 <% else %>
-  <%= link_to 'sign in to book', new_user_session_path %>
+  <%= link_to 'sign in to book', new_user_session_path, class: "btn btn-outline-success" %>
+</div>
 <% end %>
-
