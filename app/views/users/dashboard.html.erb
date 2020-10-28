@@ -1,20 +1,17 @@
 <% if current_user.teacher %>
   <div id="dashboard">
-      <div class="d-flex mt-1">
-      <p class='welcome'> Welcome</p>
-      <p><%= current_user.name.capitalize %></p>
-      </div>
+      <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>
     <div class="container">
       <div class="info-card">
         <div class='image'>
           <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-bordered", alt: "avatar-bordered" %>
         </div>
         <div class='info'>
-          <p> </p>
           <p>Basic info:</p>
           <p>Email: <%= current_user.email%> </p>
           <p>Address: <%= current_user.address %></p>
           <p>Phone: <%= current_user.telephone%> </p>
+          <p><%= link_to 'My Website', user_path(current_user) %></p>
           <p><strong>Instructor</strong></p>
         </div>
       </div>
@@ -36,7 +33,7 @@
 
         <% @courses.each do  |course| %>
           <% course.occurences.each do |occurence| %>
-          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %>
+          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %>
               <i class="far fa-trash-alt"></i> <% end %>
           </p>
           <% end %>
@@ -51,18 +48,25 @@
 <% else %>
 
   <div id="dashboard">
+    <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>,
     <div class="container">
       <div class="info-card">
-        <p class='welcome'> Welcome <%= current_user.name.capitalize %>, </p>
-        <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-bordered", alt: "avatar-bordered" %>
-        <p> </p>
-        <p>Basic info:</p>
-        <p>Email: <%= current_user.email%> </p>
-        <p>Address: <%= current_user.address %></p>
-        <p>Phone: <%= current_user.telephone%> </p>
+        <div class='image'>
+          <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-bordered", alt: "avatar-bordered" %>
+        </div>
+        <div class='info'>
+          <p>Basic info:</p>
+          <p>Email: <%= current_user.email%> </p>
+          <p>Address: <%= current_user.address %></p>
+          <p>Phone: <%= current_user.telephone%> </p>
+        </div>
       </div>
       <div class="courses-card">
       <h2>Your Upcoming Classes:</h2>
+        <% current_user.bookings.each do |booking| %>
+          <%= booking.course.name %>
+          <%= booking.occurence.date %>
+          <% end %>
     </div>
   </div>
 <% end %>

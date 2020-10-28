@@ -1,7 +1,5 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "dashboard";
-
-h1 {
-  color: red;
-}
+@import "devise";
+@import "teacher_showpage";

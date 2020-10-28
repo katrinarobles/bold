@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :find_course, only: [ :show, :edit, :update, :destroy ]
+
   def index
     @courses = current_user.courses
 
