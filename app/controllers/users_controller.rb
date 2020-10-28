@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :find_user, only: [ :show ]
+
   def show
   end
 
