@@ -63,8 +63,9 @@
       </div>
       <div class="courses-card">
       <h2>Your Upcoming Classes:</h2>
-        <% current_user.bookings.each_with_index do |booking, index| %>
-          <%= booking%>
+        <% current_user.bookings.each do |booking| %>
+          <%= booking.course.name %>
+          <%= booking.occurence.date %>
           <% end %>
     </div>
   </div>
