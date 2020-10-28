@@ -1,7 +1,7 @@
 <% if current_user.teacher %>
   <%= simple_form_for [ @course, @occurence ] do |f| %>
     <%= f.input :date %>
-    <%= f.input :time %>
+    <%= f.input :capacity %>
     <%= f.submit %>
   <% end %>
 <% else %>
