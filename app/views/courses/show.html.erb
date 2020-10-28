@@ -1,5 +1,10 @@
 <h2><%= @course.name %> </h2>
 <p> <%= @course.description %> </p>
+<ul>
+ <% @course.occurences.each do |occurence| %>
+    <li> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.capacity - occurence.bookings.size %> spots left
+    </li>
+<% end %>
 </ul>
 <h3> <%= link_to "/users/#{@course.user.id}" do %><%= @course.user.name %></h3> <% end %>
 <% if user_signed_in? %>
