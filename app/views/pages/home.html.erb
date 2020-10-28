@@ -8,57 +8,32 @@
         <form class="search-form">
           <input class="search-bar" type="search" placeholder="Type of Yoga">
         <a class="btn btn-ghost" href="#">Search</a>
-      <!--     <%= link_to "search", courses_path %> -->
-          <h1>Pages#home</h1>
-
-          <% @courses.each do  |course| %>
-          <p> <%= course.name %> - <%= course.user.name %> - <%= link_to 'details', course_path(course) %> </p>
-          <% end %>
         </form>
       </div>
   </div>
 </div>
 
-<div id="course-card-div">
-  <div class="course-card-row">
-    <div class="card-course">
-      <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
-        <div class="card-course-infos">
-          <h2>Vinyasa yoga</h2>
-          <p>Vinyasa yoga class</p>
+<div class="m-2">
+  <div style="display: flex;">
+    <div id="course-card-div">
+  <!--     <div class="course-card-row"> -->
+       <% @courses.each do  |course| %>
+        <div class="card-course">
+          <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
+            <div class="card-course-infos">
+              <h2><%= course.name %></h2>
+              <%= link_to 'details', course_path(course), class: "btn btn-outline-info mt-2" %>
+            </div>
         </div>
+       <% end %>
+      <!-- </div> -->
     </div>
-    <div class="card-course">
-      <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823157/bruce-mars-gJtDg6WfMlQ-unsplash_r7n4kr.jpg" alt="course-image">
-        <div class="card-course-infos">
-          <h2>Hatha yoga</h2>
-          <p> Hatha yoga class</p>
-        </div>
+
+    <div id="map"
+         style="width: 100%; margin-left: 20px; height: 100vh; top: 0; position: sticky; object-fit: cover;"
+         data-markers='<%= @markers.to_json %>'
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-  <div class="course-card-row">
-    <div class="card-course">
-      <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/kari-shea-qa1wvrlWCio-unsplash_gl5lot.jpg" alt="course-image">
-        <div class="card-course-infos">
-          <h2>Online yoga</h2>
-          <p> Online yoga class</p>
-        </div>
-    </div>
-    <div class="card-course">
-      <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dylan-gillis-YJdCZba0TYE-unsplash_t9ypso.jpg" alt="course-image">
-        <div class="card-course-infos">
-          <h2>Kat's yoga</h2>
-          <p> Kat's yoga class</p>
-        </div>
-    </div>
-  </div>
-
 </div>
-
-<div id="map"
-     style="width: 450px; height: 500px; margin-left: 650px; margin-top: -255px;"
-     data-markers='<%= @markers.to_json %>'
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
 
