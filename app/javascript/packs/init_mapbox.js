@@ -34,3 +34,26 @@ const initMapbox = () => {
 }
 
 export { initMapbox };
+
+// const geolocalize = (query) => {
+//   fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${query}.json?access_token=${myApiKey}`)
+//     .then(response => response.json())
+//     .then((data) => {
+//       const coordinates = data.features[0].geometry.coordinates;
+//       console.log(coordinates);
+//       mapboxgl.accessToken = 'pk.eyJ1IjoidGVtcDExIiwiYSI6ImNrZzI0eWdoaTA0bzYzMnFzcnEzdGl3NGYifQ.SnYF03XsT7T2hPJr3MBczA';
+//       const map = new mapboxgl.Map({
+//         container: 'map',
+//         style: 'mapbox://styles/mapbox/streets-v9',
+//         center: coordinates,
+//         zoom: 12
+//       });
+//       new mapboxgl.Marker()
+//         .setLngLat(coordinates)
+//         .addTo(map);
+//     });
+// };
+
+
+
+

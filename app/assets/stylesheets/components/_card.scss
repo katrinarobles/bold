@@ -1,6 +1,9 @@
 #course-card-div {
   background: white;
   width: 600px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
 
 .card-course {
   overflow: hidden;
@@ -9,7 +12,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 400px;
   margin-top: 15px;
   margin-left: 10px;
 }
@@ -21,8 +24,7 @@
 }
 
 .card-course h2 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 25px;
   margin: 0;
 }
 
@@ -38,9 +40,9 @@
   padding: 16px;
 }
 
-.course-card-row {
-  display: flex;
-  width: 600px;
-}
+// .course-card-row {
+//   display: flex;
+//   width: 600px;
+// }
 
 }
