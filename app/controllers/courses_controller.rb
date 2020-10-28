@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   before_action :find_course, only: [ :show, :edit, :update, :destroy ]
   def index
     @courses = current_user.courses
+
   end
 
   def show
@@ -10,6 +11,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
   end
+
   def create
     @course = Course.new(course_params)
     @course.user = current_user

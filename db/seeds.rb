@@ -10,10 +10,11 @@ require 'json'
 require 'open-uri'
 require 'faker'
 
-
-User.destroy_all
-Course.destroy_all
 Occurence.destroy_all
+Course.destroy_all
+User.destroy_all
+
+
 
 puts 'Creating 10 teachers'
 url = 'https://pixabay.com/api/?key=8552570-540dab6f18162a9471dc11307&q=face&image_type=photo&pretty=true'
