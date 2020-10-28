@@ -12,6 +12,7 @@ class OccurencesController < ApplicationController
     @occurence = Occurence.new(occurence_params)
     @course = Course.find(params[:course_id])
     @occurence.course = @course
+    # @occurence.user = current_user
     @occurence.save
     # redirect_to course_occurence_path(@course) // not working
     redirect_to dashboard_path
@@ -27,6 +28,6 @@ class OccurencesController < ApplicationController
   private
 
   def occurence_params
-    params.require(:occurence).permit(:date, :time)
+    params.require(:occurence).permit(:date, :capacity)
   end
 end

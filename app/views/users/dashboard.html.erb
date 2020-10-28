@@ -1,34 +1,71 @@
 <% if current_user.teacher %>
-  <div id="teacher-dashboard">
-    <div class="mt-4">
-      <div class="green-block">
+  <div id="dashboard">
+      <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>
+    <div class="container">
+      <div class="info-card">
+        <div class='image'>
+          <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-bordered", alt: "avatar-bordered" %>
+        </div>
+        <div class='info'>
+          <p>Basic info:</p>
+          <p>Email: <%= current_user.email%> </p>
+          <p>Address: <%= current_user.address %></p>
+          <p>Phone: <%= current_user.telephone%> </p>
+          <p><%= link_to 'My Website', user_path(current_user) %></p>
+          <p><strong>Instructor</strong></p>
+        </div>
       </div>
-      <h2>This is the teacher dashboard</h2>
+      <div class="courses-card">
+        <div class="header">
+          <h3>Your Listed Courses:</h3>
+        </div>
 
-      <h3>These are my courses</h3>
-      <% @courses.each do  |course| %>
-        <p><%= course.name %> - <%= link_to 'post', new_course_occurence_path(course.id) %> | <%= link_to 'destroy', course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
-      <% end %>
+        <% @courses.each do  |course| %>
+          <p><%= course.name %> - <%= link_to 'CREATE A NEW EVENT', new_course_occurence_path(course.id) %> |
+            <%= link_to edit_course_path(course) do %><i class="far fa-edit"></i><% end %> |
+            <%= link_to course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+           <% end %>
+        <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
 
-      <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
+        <div class="header">
+          <h3>Your Upcoming Events:</h3>
+        </div>
 
-      <h3>These are my occurences</h3>
-
-      <% @courses.each do  |course| %>
-        <% course.occurences.each do |occurence| %>
-        <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.time %> - <%= link_to 'destroy', course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %></p>
+        <% @courses.each do  |course| %>
+          <% course.occurences.each do |occurence| %>
+          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %>
+              <i class="far fa-trash-alt"></i> <% end %>
+          </p>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div class="calendar">
+        <h2>Calendar goes in here</h2>
+        <img src='https://citynews-today.stgy.ovh/~media/horizontal-hi/61364967865900/calendario-scolastico-2018-2019-2.jpg' width=300>
+      </div>
     </div>
   </div>
 <% else %>
-  <div id="student-dashboard">
-    <div class="mt-4">
-      <div class="green-block">
+
+  <div id="dashboard">
+    <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>,
+    <div class="container">
+      <div class="info-card">
+        <div class='image'>
+          <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-bordered", alt: "avatar-bordered" %>
+        </div>
+        <div class='info'>
+          <p>Basic info:</p>
+          <p>Email: <%= current_user.email%> </p>
+          <p>Address: <%= current_user.address %></p>
+          <p>Phone: <%= current_user.telephone%> </p>
+        </div>
       </div>
-      <h2>This is the student dashboard</h2>
+      <div class="courses-card">
+      <h2>Your Upcoming Classes:</h2>
+        <% current_user.bookings.each_with_index do |booking, index| %>
+          <%= booking%>
+          <% end %>
     </div>
   </div>
 <% end %>
-
-

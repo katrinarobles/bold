@@ -1,4 +1,8 @@
-<%= simple_form_for [ @course, @booking ] do |f| %>
-  <%= f.association :occurence, prompt: "Select time", collection: @occurences.map{ |l| "#{l.date} --- #{l.time}" } %>
-  <%= f.submit %>
+<% if !current_user.teacher %>
+  <%= simple_form_for [ @course, @booking ] do |f| %>
+    <%= f.association :occurence, prompt: "Select time", label_method: :slot, value_method: :id  %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
+
+   <!-- collection: details = @occurences.map{ |l| "#{l.date} --- #{l.time}" } %> -->
