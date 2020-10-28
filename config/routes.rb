@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :show ]
   resources :bookings, only: [ :destroy ]
-
   get '/dashboard', to: 'users#dashboard'
   # #get 'dashboard/courses/:id/occurences/new', to: 'occurences#new', as: 'new_occurrence'
   # get '/users/:id', to: 'users#show' #create logic for only teacher
