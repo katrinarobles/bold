@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  skip_before_action :authenticate_user!, only: :show
+  before_action :find_user, only: [ :show ]
   def show
     @courses = @user.courses
   end

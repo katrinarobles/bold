@@ -1,7 +1,12 @@
 <h2><%= @course.name %> </h2>
 <p> <%= @course.description %> </p>
+<ul>
+ <% @course.occurences.each do |occurence| %>
+    <li> <%= occurence.course.name %> - <%= occurence.date %> - <%= occurence.capacity - occurence.bookings.size %> spots left
+    </li>
+<% end %>
 </ul>
-<h3><%= @course.user.name %></h3>
+<h3> <%= link_to "/users/#{@course.user.id}" do %><%= @course.user.name %></h3> <% end %>
 <% if user_signed_in? %>
   <% if !current_user.teacher %>
     <%= link_to 'book', new_course_booking_path(@course) %>
@@ -9,10 +14,6 @@
     <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
   <% end %>
 <% else %>
-  <% if !current_user.teacher %>
-    <%= link_to 'sign in to book', new_user_session_path %>
-  <% else %>
-    <%= link_to 'sign in to edit', new_user_session_path %>
-  <% end %>
+  <%= link_to 'sign in to book', new_user_session_path %>
 <% end %>
 
