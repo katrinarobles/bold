@@ -7,4 +7,8 @@ class Occurence < ApplicationRecord
 
   validates_associated :bookings
   validates :course, presence: true
+
+  def slot
+    "#{date}"
+  end
 end
