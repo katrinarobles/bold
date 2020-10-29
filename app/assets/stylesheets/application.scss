@@ -12,11 +12,14 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/main_btn";
+@import "components/font";
 @import "pages/index";
 
 @import 'mapbox-gl/dist/mapbox-gl';
 
 body {
   background-color: white;
+  font-family: "Work Sans", "Roboto", "sans-serif";
 }
 
