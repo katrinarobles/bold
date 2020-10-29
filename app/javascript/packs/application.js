@@ -37,9 +37,34 @@ import { datePicker } from '../plugins/flatpickr';
 
 import { initMapbox } from './init_mapbox';
 
+
+
+const animateButton = (e) => {
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+
+
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
   datePicker();
+  var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  console.log(bubblyButtons);
+  if (bubblyButtons) {
+    for (var i = 0; i < bubblyButtons.length; i++) {
+      bubblyButtons[i].addEventListener('click', animateButton, false);
+    }
+  }
 });
+
+

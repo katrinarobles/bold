@@ -84,16 +84,56 @@
   background-size: cover;
   background-position: center;
   height: 180px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-show {
+  font-family: work-sans;
+  background-color: #018a79;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #018a79;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 5px;
+}
+.cards-header{
+  font-weight:bold;
+}
+
+.cards-parag{
+  font-family: work-sans;
+  font-size: 20px;
+}
+
+.card-show-info {
+  font-family: work-sans;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  // border: 0.5px solid #018a79;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
 
 .card-category-teacher {
   height: 200px;
@@ -145,7 +185,6 @@
   height: 120px;
   max-width: 800px;
   font-size: 18px;
-
 }
 
 
