@@ -1,21 +1,21 @@
-<div class="card-category card-category-teacher" style="background-image: linear-gradient(rgba(34, 112, 103,0.3), rgba(34, 112, 103,0.3)), url(https://source.unsplash.com/500x500/?yoga)">
-  <div class="card-relative">
-    <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" %>
-    <h2> <%= @user.name.upcase %> </h2>
-    <ul>
-      <li> <%= @user.email %> </li>
-      <li> <%= @user.telephone %> </li>
-      <li> <%= @user.address %> </li>
-    </ul>
+<div style="background-size: cover;">
+  <div class="card-category card-category-teacher" style="background-image: linear-gradient(rgba(34, 112, 103,0.3), rgba(34, 112, 103,0.3)), url(https://source.unsplash.com/500x500/?yoga)">
+    <div class="card-relative">
+      <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" %>
+      <ul>
+        <li style="margin-top: 45px;"> <%= @user.email %> </li>
+        <li> <%= @user.telephone %> </li>
+        <li> <%= @user.address %> </li>
+      </ul>
+    </div>
+    <h1> <%= @user.name.upcase %> </h1>
   </div>
-  <%= image_tag "Bold.png", class: "logo-teacher-website"%>
-</div>
 
-<div class="card-info">
-  <h5> About me: </h5>
-  <p> I am a yoga teacher based in Bali, Indonesia, where the sun sets on her yoga classes.
-        This is more information that can be modified by Friday with a limited text of 500 characters so we don't
-        get bored with all that nonsense!</p>
+  <div class="card-info">
+    <p> I am a yoga teacher based in Bali, Indonesia, where the sun sets on her yoga classes.
+          This is more information that can be modified by Friday with a limited text of 500 characters so we don't
+          get bored with all that nonsense!</p>
+  </div>
 </div>
 
 
