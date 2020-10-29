@@ -6,76 +6,103 @@
   .welcome {
     font-family: 'Pacifico', cursive;
     letter-spacing: 2px;
-    font-size: 1em;
+    font-size: 40px;
+    margin-right: 20px;
+    margin-left: 60px;
+  }
+  p {
+    font-size: 40px;
+    font-weight: 100;
   }
 
-  .container {
-    display: flex;
-    margin-left: 0px;
-    padding: 20px;
-    background-color: #ffffff;
-  }
-  .container2 {
-    width: 100%;
+  // .container {
+  //   display: flex;
+  //   margin-left: 0px;
+  //   padding: 20px;
+  //   background-color: #ffffff;
+  // }
+  // .container2 {
+  //   width: 100%;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+  .card-body {
+    background-color: rgba(243, 238, 233, 0.7);
+    margin-left: 100px;
+    margin-top: 50px;
+    width: 500px;
+    height: 450px;
     justify-content: center;
-    align-items: center;
+    display: block;
+    border-radius: 5px;
+    padding: 30px;
+    h4 {
+      font-family: 'Pacifico', cursive;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      font-weight: 400;
+      margin-bottom: 20px;
+      font-size: 16px;
+      text-shadow: none;
+    }
   }
-  .card-body1 {
-    width: 250px;
-    padding: 10px;
-    text-align: left;
-  }
-  .card-text {
-    margin-bottom: 10px;
-  }
-  .image {
-    text-align: center;
-  }
+  // .card-text {
+  //   margin-bottom: 10px;
+  // }
+  // .image {
+  //   text-align: center;
+  // }
 
-  .header {
-    margin-bottom: 50px;
+  // .header {
+  //   margin-bottom: 50px;
 
-  }
-  .info-card {
-  }
+  // }
+  // .info-card {
+  // }
 
-  .courses-card{
-    text-align: center;
-    width: 400px;
-    margin: 0 auto;
-  }
+  // .courses-card{
+  //   text-align: center;
+  //   width: 400px;
+  //   margin: 0 auto;
+  // }
 
-  .columns {
-  }
-  .d-flex {
-    justify-content: space-between;
-  }
-  .column1{
+  // .columns {
+  // }
+  // .d-flex {
+  //   justify-content: space-between;
+  // }
+  // .column1{
 
-  }
+  // }
 
-  .calendar {
-    text-align:center;
-  }
-  .avatar-large {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  align-item: center;
-  }
+  // .calendar {
+  //   text-align:center;
+  // }
+  // .avatar-large {
+  // width: 150px;
+  // height: 150px;
+  // border-radius: 50%;
+  // object-fit: cover;
+  // align-item: center;
+  // }
 
-  .info {
-    margin-top: 20px;
-  }
+  // .info {
+  //   margin-top: 20px;
+  // }
 
-  .courses-card {
-    padding: 10px;
-  }
+  // .courses-card {
+  //   padding: 10px;
+  // }
 
-  .calendar-card {
-    padding: 10px;
-    text-align: center;
-  }
+  // .calendar-card {
+  //   padding: 10px;
+  //   text-align: center;
+  // }
 }
 // background-color: #217167;

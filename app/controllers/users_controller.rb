@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @courses = current_user.courses
+    @user = current_user
+    @courses = @user.courses
   end
 
   private
