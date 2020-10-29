@@ -35,11 +35,12 @@
     // height: 100px;
 }
 
-.card-course img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+  .card-course img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
 
 .card-course h2 {
   font-family: work-sans;
@@ -49,17 +50,17 @@
   padding: 10px;
 }
 
-.card-course p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+  .card-course p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
 
-.card-course .card-course-infos {
-  padding: 16px;
-}
+  .card-course .card-course-infos {
+    padding: 16px;
+  }
 
 .course-card-row {
   display: flex;
@@ -78,9 +79,6 @@
 
 
 }
-
-
-
 
 .card-category {
   background-size: cover;
@@ -114,7 +112,6 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   padding: 5px;
 }
-
 .cards-header{
   font-weight:bold;
 }
@@ -137,6 +134,57 @@
   color: black;
   font-size: 18px;
   border-radius: 5px;
+
+.card-category-teacher {
+  height: 200px;
+  justify-content: space-between;
+  border-radius: 0;
+    h1 {
+    margin-right: 150px;
+    font-weight: bolder;
+    font-size: 50px;
+    text-shadow: none;
+  }
+}
+
+.card-relative {
+  position: relative;
+  background-color: rgba(34, 112, 103,0.7);
+  margin-left: 100px;
+  margin-top: 150px;
+  max-height: 500px;
+  max-width: 420px;
+  width: 420px;
+  height: 330px;
+  text-align: center;
+  justify-content: center;
+  display: block;
+  color: white;
+  border-radius: 5px;
+  padding: 20px 30px;
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    font-weight: 400;
+    font-size: 18px;
+    text-shadow: none;
+  }
+}
+
+.card-info {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgb(60, 60, 60);
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 550px;
+  margin-top: 20px;
+  max-height: 400px;
+  justify-content: center;
+  height: 120px;
+  max-width: 800px;
+  font-size: 18px;
 }
 
 

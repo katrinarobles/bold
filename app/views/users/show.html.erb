@@ -1,15 +1,18 @@
-<div class="card-trip">
-  <div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.2)), url(https://source.unsplash.com/500x500/?yoga);">
-  <div class="space">
-  </div>
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+<div style="background-size: cover;">
+  <div class="card-category card-category-teacher" style="background-image: linear-gradient(rgba(34, 112, 103,0.3), rgba(34, 112, 103,0.3)), url(https://source.unsplash.com/500x500/?yoga)">
+    <div class="card-relative">
+      <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" %>
+      <ul>
+        <li style="margin-top: 45px;"> <%= @user.email.upcase %> </li>
+        <li> <%= @user.telephone.upcase %> </li>
+        <li> <%= @user.address.upcase %> </li>
+      </ul>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png" class="card-trip-user avatar-bordered" alt="avatar-bordered">
+    <h1> <%= @user.name.upcase %> </h1>
+  </div>
+</</div>
+
+  <div class="card-info">
+    I am a yoga teacher based in Bali, Indonesia, where the sun sets on her yoga classes. This is more information that can be modified by Friday with a limited text of 500 characters so we don't get bored with all that nonsense!
   </div>
 </div>
-
-

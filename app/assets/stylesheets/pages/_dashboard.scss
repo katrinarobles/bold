@@ -7,17 +7,27 @@
     font-family: 'Pacifico', cursive;
     letter-spacing: 2px;
     font-size: 1em;
-    margin-left: 10px;
   }
 
   .container {
     display: flex;
-    justify-content: space-between;
     margin-left: 0px;
     padding: 20px;
     background-color: #ffffff;
   }
-
+  .container2 {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-body1 {
+    width: 250px;
+    padding: 10px;
+    text-align: left;
+  }
+  .card-text {
+    margin-bottom: 10px;
+  }
   .image {
     text-align: center;
   }
@@ -28,11 +38,31 @@
   }
   .info-card {
   }
+
+  .courses-card{
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .columns {
+  }
+  .d-flex {
+    justify-content: space-between;
+  }
+  .column1{
+
+  }
+
+  .calendar {
+    text-align:center;
+  }
   .avatar-large {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  align-item: center;
   }
 
   .info {

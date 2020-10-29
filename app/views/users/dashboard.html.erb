@@ -50,26 +50,40 @@
 <% else %>
 
   <div id="dashboard">
-    <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>,
-    <div class="container">
-      <div class="info-card">
-        <div class='image'>
-          <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603970239/Screenshot_2020-10-27_at_20.18.05_ddy7yv.png", class: "avatar-large", alt: "avatar-large" %>
+    <div class ="container">
+      <div class="card-body1">
+        <span class='welcome'> Welcome </span> <%= current_user.name.split(' ').first.capitalize %>,
+        <div class='image'><p><%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603970239/Screenshot_2020-10-27_at_20.18.05_ddy7yv.png", class: "avatar-large", alt: "avatar-large" %></p>
         </div>
-        <div class='info'>
-          <p>Basic info:</p>
-          <p>Email: <%= current_user.email%> </p>
-          <p>Address: <%= current_user.address %></p>
-          <p>Phone: <%= current_user.telephone%> </p>
+        <p class="card-text">
+        <p>Basic info:</p>
+        <p>Email: <%= current_user.email%> </p>
+        <p>Address: <%= current_user.address %></p>
+        <p>Phone: <%= current_user.telephone%> </p>
         </div>
-      </div>
+
+    <div class="container2">
       <div class="courses-card">
-      <h2>Your Upcoming Classes:</h2>
-        <% current_user.bookings.each do |booking| %>
-          <p><strong><%= booking.course.name %></strong> (<%= booking.occurence.date %>)
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %></p>
-          <% end %>
-      <h2><%= link_to 'Book More Classes', root_path, class: 'btn btn-outline-success' %></legend>
-    </div>
+        <h2>Your Upcoming Classes:</h2>
+        <div class='columns'>
+          <% current_user.bookings.each do |booking| %>
+        <div class='d-flex'>
+          <div class='column1'>
+              <p><strong><%= booking.course.name %></strong> (<%= booking.occurence.date%>)</p>
+            </div>
+          <div class='column2'>
+            <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+          </div>
+          </div>
+            <% end %>
+        </div>
+        <h2><%= link_to 'Book More Classes', root_path, class: 'btn btn-outline-success' %>
+      </div>
+
+      <div class="calendar">
+        <h2>WEEK Calendar</h2>
+        <p><img src='https://citynews-today.stgy.ovh/~media/horizontal-hi/61364967865900/calendario-scolastico-2018-2019-2.jpg' width=300></p>
+      </div>
   </div>
+</div>
 <% end %>

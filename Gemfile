@@ -25,6 +25,8 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'dotenv-rails', groups: [:development, :test]
 
+gem 'pg_search', '~> 2.3.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -35,8 +37,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-#added by Lily
+# added by Lily
 gem 'geocoder'
+gem "simple_calendar", "~> 2.0"
 
 
 group :development, :test do
