@@ -5,8 +5,10 @@ class PagesController < ApplicationController
     @markers = @courses.geocoded.map do |course|
       {
         lat: course.latitude,
-        lng: course.longitude
+        lng: course.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { course: course })
       }
+
     end
   end
 end
