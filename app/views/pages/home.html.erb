@@ -5,10 +5,13 @@
     </div>
 
       <div class="search-bar-div">
-        <form class="search-form">
-          <input class="search-bar" type="search" placeholder="Type of Yoga">
-        <a class="btn btn-ghost" href="#">Search</a>
-        </form>
+        <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-bar",
+            placeholder: "Find a Class"
+          %> <%= submit_tag "Search", class: "btn btn-ghost" %>
+        <% end %>
       </div>
   </div>
 </div>
