@@ -122,16 +122,19 @@
   color: white;
   border-radius: 5px;
   padding: 20px 30px;
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
   li {
-    text-align: left;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 18px;
     text-shadow: none;
   }
 }
 
 .card-info {
-  background-color: rgba(0, 0, 0,0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   color: rgb(60, 60, 60);
   padding: 20px;
   border-radius: 5px;
@@ -141,12 +144,8 @@
   justify-content: center;
   height: 120px;
   max-width: 800px;
-  p {
-    font-size: 18px;
-  }
-  h5 {
-    font-size: 18px;
-  }
+  font-size: 18px;
+
 }
 
 
