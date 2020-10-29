@@ -61,40 +61,6 @@
   color: #005B50;
 }
 
-.btn-outline-success {
-  color: #005B50;
-  border-color: #005B50;
-}
-
-.btn-outline-success:hover {
-  color: #fff;
-  background-color: #005B50;
-  border-color: #ffffff;
-}
-
-.btn-outline-success:focus, .btn-outline-success.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
-.btn-outline-success.disabled, .btn-outline-success:disabled {
-  color: #007bff;
-  background-color: transparent;
-}
-
-.btn-outline-success:not(:disabled):not(.disabled):active, .btn-outline-success:not(:disabled):not(.disabled).active,
-
-.show > .btn-outline-succss.dropdown-toggle {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.btn-outline-success:not(:disabled):not(.disabled):active:focus, .btn-outline-success:not(:disabled):not(.disabled).active:focus,
-
-.show > .btn-outline-success.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-}
-
 .forgot-form, .sign-up-form{
   color: #005B50 !important;
   font-family: roboto !important;

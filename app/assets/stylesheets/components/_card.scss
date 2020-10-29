@@ -1,21 +1,39 @@
 #course-card-div {
-  background: white;
+  background-color: white;
   width: 600px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 10px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // color: #f2f2f2;
 
-  .card-course {
-    overflow: hidden;
-    height: 120px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    width: 400px;
-    margin-top: 15px;
-    margin-left: 10px;
-  }
+.card-course {
+  overflow: hidden;
+  height: 120px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin-top: 15px;
+  margin-left: 10px;
+  // border: 1px solid black;
+  // transition-property: background-color;
+  // transition-duration: 0.6s;
+  // transition-timing-function: linear;
+  background: -webkit-linear-gradient(#ffffff,#018a79);
+  background: -moz-linear-gradient(#ffffff,#018a79);
+  background: -o-linear-gradient(#ffffff,#018a79);
+  background: linear-gradient(#ffffff,#018a79);
+  -webkit-transition: background 0.5s ease-out;
+  -moz-transition: background 0.5s ease-out;
+  -o-transition: background 0.5s ease-out;
+  transition: background 0.5s ease-out;
+    // background-size:1px 200px;
+    // border-radius: 10px;
+    // border: 1px solid #839DB0;
+    // cursor:pointer;
+    // width: 150px;
+    // height: 100px;
+}
 
   .card-course img {
     height: 100%;
@@ -23,10 +41,14 @@
     object-fit: cover;
   }
 
-  .card-course h2 {
-    font-size: 25px;
-    margin: 0;
-  }
+
+.card-course h2 {
+  font-family: work-sans;
+  color: black;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+}
 
   .card-course p {
     font-size: 12px;
@@ -40,10 +62,21 @@
     padding: 16px;
   }
 
-// .course-card-row {
-//   display: flex;
-//   width: 600px;
-// }
+.course-card-row {
+  display: flex;
+  width: 600px;
+}
+.card-course:hover, .card-course img:hover {
+  opacity: 1;
+  background: #e2a9e5;
+  background: -moz-linear-gradient(-15deg, #ffffff 15%, #018a79 100%);
+  background: -webkit-linear-gradient(-15deg, #ffffff 15%,#018a79 100%);
+  background: linear-gradient(135deg, #ffffff 15%,#018a79 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#018a79',GradientType=1 );
+  background-position:100px;
+
+}
+
 
 }
 
@@ -113,14 +146,6 @@
     font-size: 18px;
   }
 }
-
-
-
-
-
-
-
-
 
 
 
