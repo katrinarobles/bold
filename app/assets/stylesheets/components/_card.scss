@@ -43,7 +43,6 @@
 
 
 .card-course h2 {
-  font-family: work-sans;
   color: black;
   font-size: 20px;
   margin: 0;
@@ -96,7 +95,6 @@
 }
 
 .card-show {
-  font-family: work-sans;
   background-color: #018a79;
   background-size: cover;
   background-position: center;
@@ -117,23 +115,21 @@
 }
 
 .cards-parag{
-  font-family: work-sans;
   font-size: 20px;
 }
 
 .card-show-info {
-  font-family: work-sans;
   background-color: #fff;
   background-size: cover;
   background-position: center;
   // border: 0.5px solid #018a79;
   margin-bottom: 10px;
   display: flex;
-  justify-content: left;
   align-items: center;
   color: black;
   font-size: 18px;
   border-radius: 5px;
+}
 
 .card-category-teacher {
   height: 200px;
@@ -142,7 +138,7 @@
     h1 {
     margin-right: 150px;
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 40px;
     text-shadow: none;
   }
 }
@@ -186,7 +182,6 @@
   max-width: 800px;
   font-size: 18px;
 }
-
 
 
 
