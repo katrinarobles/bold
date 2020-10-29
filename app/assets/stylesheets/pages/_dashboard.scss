@@ -8,6 +8,7 @@
     letter-spacing: 2px;
     font-size: 1em;
     margin-left: 10px;
+    margin-bottom: 20px;
   }
 
   .container {
@@ -18,6 +19,13 @@
     background-color: #ffffff;
   }
 
+  .card-body {
+    width: 200px;
+    padding: 10px;
+  }
+  .card-text {
+    margin-bottom: 10px;
+  }
   .image {
     text-align: center;
   }
