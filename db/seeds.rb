@@ -82,7 +82,9 @@ User.where(teacher: true).each do |teacher|
       description: "#{descriptions.sample}",
       duration: durations.sample,
       price: (10..20).to_a.sample,
-      location: "#{Faker::Address.full_address}",
+      # Lily
+      # location: "#{Faker::Address.full_address}",
+      location: "#{addresses.sample}",
     )
     course.user = teacher
     course.save
@@ -117,7 +119,7 @@ puts 'Finished!'
 
 
 
-
+  π
 
 
 

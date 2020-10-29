@@ -1,0 +1,7 @@
+<div class="mapboxgl-popup">
+  <div class="mapboxgl-popup-content">
+      <h2><%= course.name %></h2>
+      <p><%= course.location %></p>
+      <%= link_to 'details', course_path(course), class: "btn btn-outline-info mt-2" %>
+  </div>
+</div>
