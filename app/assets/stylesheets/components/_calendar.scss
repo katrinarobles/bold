@@ -1,0 +1,36 @@
+.simple-calendar {
+  margin: 30px 100px;
+  height: 300px;
+  background-color: white;
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: rgba(250, 231, 129, 0.3);
+    background-color: rgba(215, 240, 226, 0.3);
+
+  }
+  .past {
+    background-color: rgba(254, 222, 217, 0.3);
+    background-color: white;
+  }
+  .future {
+    background-color: rgba(215, 240, 226, 0.3);
+    background-color: white;
+  }
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}

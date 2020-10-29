@@ -96,39 +96,45 @@
 }
 
 .card-category-teacher {
-  height: 300px;
+  height: 200px;
   justify-content: space-between;
   border-radius: 0;
+    h1 {
+    margin-right: 150px;
+    font-weight: bolder;
+    font-size: 50px;
+    text-shadow: none;
+  }
 }
 
 .card-relative {
   position: relative;
   background-color: rgba(34, 112, 103,0.7);
   margin-left: 100px;
-  margin-top: 200px;
+  margin-top: 150px;
   max-height: 500px;
-  max-width: 400px;
+  max-width: 420px;
+  width: 420px;
+  height: 330px;
   text-align: center;
   justify-content: center;
   display: block;
   color: white;
   border-radius: 5px;
-  padding: 20px 60px;
-
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    font-weight: bolder;
+  padding: 20px 30px;
+  ul {
+    list-style: none;
+    padding-left: 0;
   }
   li {
-    text-align: left;
-    font-weight: lighter;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    text-shadow: none;
   }
 }
 
 .card-info {
-  background-color: rgba(0, 0, 0,0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   color: rgb(60, 60, 60);
   padding: 20px;
   border-radius: 5px;
@@ -136,15 +142,10 @@
   margin-top: 20px;
   max-height: 400px;
   justify-content: center;
-  height: 150px;
+  height: 120px;
   max-width: 800px;
-  width: 800px;
-  p {
-    font-size: 18px;
-  }
-  h5 {
-    font-size: 18px;
-  }
+  font-size: 18px;
+
 }
 
 
