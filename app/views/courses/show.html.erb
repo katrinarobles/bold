@@ -1,26 +1,33 @@
-<div class="container-class" style="margin: 20px; border: 2px solid #018a79; text-align: center; height: auto;">
-  <h2 style="padding: 10px; color: #018a79;"><%= @course.name %> </h2>
-  <p> <strong><%= @course.description %></strong> </p>
 
-<ul>
-<div class="occurence" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; border-radius: 5px; padding: 20px;">
+<div class="container-class" style="margin: 20px; border: 2px solid #018a79; text-align: center; height: auto;">
+<div class="container-course-info">
+<div class="course-img">
+<img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
+</div>
+<div class="course-info">
+  <h2 class="cards-header" style="padding: 10px; color: #018a79; font-family: pacifico; "><%= @course.name %> </h2>
+  <div class="card-show-info" label="description"> <%= @course.description %> </div>
+  <div class="card-show-info"><%= @course.location %></div>
+  <div class="card-show-info"> € <%= @course.price %> </div>
+  <%= link_to @course.user.name, user_path(@course.user.id), class: "btn btn-outline-success" %>
+</div>
+</div>
+<div class="occurence">
  <% @course.occurences.each do |occurence| %>
 
-<%= render "card", locals: {occurence: occurence} %>
-
-
-
-
+<%= render "cardshow", locals: {occurence: occurence} %>
+<div class="link-courses">
 <% end %>
-</div>
-<h3> <%= link_to "/users/#{@course.user.id}" do %><%= @course.user.name %></h3> <% end %>
+
 <% if user_signed_in? %>
-  <% if !current_user.teacher %>
-    <%= link_to 'book', new_course_booking_path(@course) %>
+  <% if !current_user.teacher or current_user.nil? %>
+    <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
   <% elsif @course.user == current_user %>
     <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
   <% end %>
 <% else %>
-  <%= link_to 'sign in to book', new_user_session_path, class: "btn btn-outline-success" %>
+  <%= link_to 'sign in to book', new_user_session_path %>
+</div>
 </div>
 <% end %>
+</div>
