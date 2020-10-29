@@ -1,38 +1,87 @@
-#teacher-showpage {
-  .container {
-    display: flex;
-    justify-content: center;
-  }
-  .info {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-  }
-  .class-offered {
-    display: flex;
-    margin: 10px;
-    padding: 10px;
-    justify-content: space-around;
-  }
 
-
-  .banner {
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-  }
-
-  .banner h3 {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-    font-weight: bold;
-  }
-
-  .banner p {
-    font-size: 20px;
-    color: black;
-    opacity: .8;
-  }
+.card-trip {
+  // overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.banner {
+  // height: 200px;
+  // width: 100%;
+  // object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  padding: 300px, 0;
+}
+
+.space {
+  height: 300px;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  border-style: solid;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  left: 100px;
+  top: -50px;
+}
+
+// #teacher-showpage {
+
+//   .banner {
+//     background-size: cover;
+//     background-position: center;
+//     padding: 50px, 0;
+
+//   }
+
+//   .container {
+//     display: flex;
+
+//   }
+//   .info {
+//     text-align: center;
+//     background-color: rgba(255, 255, 255, 0.8);
+//     border-radius: 5px;
+//   }
+//   .class-offered {
+//     margin: 10px;
+//     padding: 10px;
+//     display: flex;
+//     justify-content: space-around;
+//   }
+
+//   .banner h3 {
+//     margin: 0;
+//     color: white;
+//     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//     font-size: 32px;
+//     font-weight: bold;
+//   }
+
+//   .banner p {
+//     font-size: 20px;
+//     color: black;
+//     opacity: .8;
+//   }
+// }

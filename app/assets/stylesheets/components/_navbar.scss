@@ -26,6 +26,10 @@
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #ffffff !important;
+   &:hover {
+    letter-spacing: 3px;
+    opacity: 0.7;
+  }
 }
 
