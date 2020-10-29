@@ -1,4 +1,49 @@
-<div class="card-trip">
+<div class="card-category card-category-teacher" style="background-image: linear-gradient(rgba(34, 112, 103,0.3), rgba(34, 112, 103,0.3)), url(https://source.unsplash.com/500x500/?yoga)">
+  <div class="card-relative">
+    <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" %>
+    <h2> <%= @user.name.upcase %> </h2>
+    <ul>
+      <li> <%= @user.email %> </li>
+      <li> <%= @user.telephone %> </li>
+      <li> <%= @user.address %> </li>
+    </ul>
+  </div>
+  <%= image_tag "Bold.png", class: "logo-teacher-website"%>
+</div>
+
+<div class="card-info">
+  <h5> About me: </h5>
+  <p> I am a yoga teacher based in Bali, Indonesia, where the sun sets on her yoga classes.
+        This is more information that can be modified by Friday with a limited text of 500 characters so we don't
+        get bored with all that nonsense!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card-trip">
   <div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.2)), url(https://source.unsplash.com/500x500/?yoga);">
   <div class="space">
   </div>
@@ -10,7 +55,7 @@
     <h2 class="card-trip-pricing">£99.99</h2>
     <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png" class="card-trip-user avatar-bordered" alt="avatar-bordered">
   </div>
-</div>
+</div> -->
 
 
 
