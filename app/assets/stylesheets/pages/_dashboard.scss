@@ -28,6 +28,12 @@
   }
   .info-card {
   }
+  .avatar-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  }
 
   .info {
     margin-top: 20px;
@@ -41,8 +47,5 @@
     padding: 10px;
     text-align: center;
   }
-
-// background-color: #217167;
-
 }
-
+// background-color: #217167;
