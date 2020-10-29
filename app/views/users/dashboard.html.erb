@@ -1,89 +1,71 @@
-<% if current_user.teacher %>
-  <div id="dashboard">
-      <span class='welcome'> Welcome </span> <%= current_user.name.capitalize %>
-    <div class="container">
-      <div class="info-card">
-        <div class='image'>
-          <%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603828560/Screenshot_2020-10-27_at_20.55.41_j80wgs.png", class: "avatar-large", alt: "avatar-large" %>
-        </div>
-        <div class='info'>
-          <p>Basic info:</p>
-          <p>Email: <%= current_user.email%> </p>
-          <p>Address: <%= current_user.address %></p>
-          <p>Phone: <%= current_user.telephone%> </p>
-          <p><%= link_to 'My Website', user_path(current_user) %></p>
-          <p><strong>Instructor</strong></p>
-        </div>
-      </div>
-      <div class="courses-card">
-        <div class="header">
-          <h3>Your Listed Courses:</h3>
-        </div>
+<div id="dashboard">
+  <div class="d-flex mt-5 ml-5" style="max-width: 700px; ">
+    <span class='welcome'> Welcome <%= @user.name.split(" ").first.capitalize %></span>
+  </div>
+<div class="d-flex">
+<% if @user.teacher %>
 
-        <% @courses.each do  |course| %>
-          <p><%= course.name %> - <%= link_to 'CREATE A NEW EVENT', new_course_occurence_path(course.id) %> |
+    <div class="card-body">
+      <h4>My Info</h4>
+      <ul>
+        <% @user.courses.each do  |course| %>
+        <li> <%= course.name %> - <%= link_to 'POST', new_course_occurence_path(course.id) %> |
             <%= link_to edit_course_path(course) do %><i class="far fa-edit"></i><% end %> |
             <%= link_to course_path(course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
-           <% end %>
-        <p><%= link_to 'ALL', courses_path %> | <%= link_to 'ADD', new_course_path %></p>
+        </li>
+        <% end %>
+      </ul>
 
-        <div class="header">
-          <h3>Your Upcoming Events:</h3>
-        </div>
+      <h2><%= link_to 'ADD', new_course_path, class: 'btn btn-outline-success' %></h2>
 
-        <% @courses.each do  |course| %>
+    </div>
+
+    <div class="container month-calendar">
+      <%= month_calendar do |date| %>
+        <h6><%= date.day %></h6>
+        <% @user.courses.each do |course| %>
           <% course.occurences.each do |occurence| %>
-          <p> <%= occurence.course.name %> - <%= occurence.date %> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %>
-              <i class="far fa-trash-alt"></i> <% end %>
-          </p>
+            <% if occurence.date.to_datetime.to_date == date%>
+              <div>
+                <%= occurence.course.name%> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      </div>
-      <div class="calendar">
-        <h2>Calendar goes in here</h2>
-        <img src='https://citynews-today.stgy.ovh/~media/horizontal-hi/61364967865900/calendario-scolastico-2018-2019-2.jpg' width=300>
-      </div>
+      <% end %>
     </div>
-  </div>
 
 <!-- CLIENT'S DASHBOARD  -->
 <% else %>
 
-  <div id="dashboard">
-    <div class ="container">
-      <div class="card-body1">
-        <span class='welcome'> Welcome </span> <%= current_user.name.split(' ').first.capitalize %>,
-        <div class='image'><p><%= image_tag "https://res.cloudinary.com/dolfny7hf/image/upload/v1603970239/Screenshot_2020-10-27_at_20.18.05_ddy7yv.png", class: "avatar-large", alt: "avatar-large" %></p>
-        </div>
-        <p class="card-text">
-        <p>Basic info:</p>
-        <p>Email: <%= current_user.email%> </p>
-        <p>Address: <%= current_user.address %></p>
-        <p>Phone: <%= current_user.telephone%> </p>
-        </div>
+    <div class="card-body">
+      <h4>My Info</h4>
+      <ul>
+        <i class="fas fa-envelope"></i><li>  <%= @user.email.upcase %> </li>
+        <i class="fas fa-map-marker-alt"></i><li>  <%= @user.telephone.upcase %> </li>
+        <i class="fas fa-phone"></i><li>  <%= @user.address.upcase %> </li>
+      </ul>
+      <h2><%= link_to 'Edit My Info', edit_user_registration_path, class: 'btn btn-outline-success' %></h2>
+      <h2><%= link_to 'Book More Classes', root_path, class: 'btn btn-outline-success' %></h2>
 
-    <div class="container2">
-      <div class="courses-card">
-        <h2>Your Upcoming Classes:</h2>
-        <div class='columns'>
-          <% current_user.bookings.each do |booking| %>
-        <div class='d-flex'>
-          <div class='column1'>
-              <p><strong><%= booking.course.name %></strong> (<%= booking.occurence.date%>)</p>
-            </div>
-          <div class='column2'>
-            <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
-          </div>
-          </div>
+    </div>
+
+    <div class="container month-calendar">
+      <%= month_calendar do |date| %>
+        <h6><%= date.day %></h6>
+        <% @user.bookings.each do |booking| %>
+            <% if booking.occurence.date.to_datetime.to_date == date%>
+              <div>
+                <%= booking.occurence.course.name.upcase %> - <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+              </div>
             <% end %>
-        </div>
-        <h2><%= link_to 'Book More Classes', root_path, class: 'btn btn-outline-success' %>
-      </div>
+        <% end %>
+      <% end %>
+    </div>
 
-      <div class="calendar">
-        <h2>WEEK Calendar</h2>
-        <p><img src='https://citynews-today.stgy.ovh/~media/horizontal-hi/61364967865900/calendario-scolastico-2018-2019-2.jpg' width=300></p>
-      </div>
-  </div>
-</div>
 <% end %>
+</div>
+</div>
+
+
+
