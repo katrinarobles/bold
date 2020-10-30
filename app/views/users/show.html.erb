@@ -3,9 +3,10 @@
     <div class="card-relative">
       <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" %>
       <ul>
-        <li style="margin-top: 45px;"> <%= @user.email.upcase %> </li>
-        <li> <%= @user.telephone.upcase %> </li>
-        <li> <%= @user.address.upcase %> </li>
+        <li style="margin-top: 20px;"> <i class="fas fa-envelope"></i><%= @user.email.upcase %> </li>
+        <li> <i class="fas fa-phone"></i><%= @user.telephone.upcase %> </li>
+        <li><i class="fas fa-map-marker-alt"></i><%= @user.address.upcase %> </li>
+        <li><i class="fab fa-facebook-square"></i><i class="fab fa-instagram" style="margin-left: 15px;"></i></li>
       </ul>
     </div>
     <h1><%= @user.name.upcase %> </h1>
@@ -22,7 +23,7 @@
     <h6><%= date.day %></h6>
     <% @courses.each do |course| %>
       <% course.occurences.each do |occurence| %>
-        <% if occurence.date.to_datetime.to_date == date%>
+        <% if occurence.date.to_date == date%>
           <div class="border border-dark p-2 mb-2 ">
             <%= occurence.course.name%>
             <% if user_signed_in? %>

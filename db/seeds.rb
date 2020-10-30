@@ -98,7 +98,7 @@ times = ["7:00", "9:00", "11:00", "16:00", "18:00", "20:00"]
 Course.all.each do |course|
   3.times do
     occurence = Occurence.new(
-      date: "#{Faker::Time.forward(days: 6,  period: :day)}",
+      date: DateTime.parse("#{Faker::Time.forward(days: 20,  period: :day)}"),
       capacity: (10..20).to_a.sample
     )
     occurence.course = course
