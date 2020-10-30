@@ -58,6 +58,9 @@
 }
 
 .card-course .card-course-infos {
+  display: flex;
+  align-items: center;
+  width: auto;
   padding: 16px;
 }
 
@@ -78,8 +81,6 @@
 
 
 }
-
-
 
 
 .card-category {
