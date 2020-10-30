@@ -23,6 +23,41 @@
 
 body {
   background-color: white;
-  font-family: "Work Sans", "Roboto", "sans-serif";
+  font-family: "Roboto", "Work Sans", "sans-serif";
 }
 
+@media(max-width: 1080px) {
+  body {
+    width: 966px;
+  }
+  .navbar {
+    max-width: 966px;
+  }
+  .card-course {
+    grid-template-columns: 1fr;
+  }
+  .card-course-infos{
+    overflow: scroll;
+  }
+  .card-info {
+    overflow: scroll;
+  }
+}
+
+@media(max-width: 768px) {
+   body {
+    width: 650px;
+  }
+   .navbar {
+    max-width: 650px;
+  }
+  .card-course {
+    grid-template-columns: 1fr;
+  }
+  .card-course-infos{
+    overflow: scroll;
+  }
+   .card-info {
+    overflow: scroll;
+  }
+}
