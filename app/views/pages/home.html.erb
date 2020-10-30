@@ -1,15 +1,15 @@
 <div id="search-bar">
   <div class="background-image" style="background-image: url(<%= asset_path'landing_background.jpg'%>)">
-    <div class="bold-logo-div">
+    <div class="bold-logo-div d-flex justify-content-center">
       <img class="bold-logo" id="fade-in" src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" alt="bold-logo">
     </div>
 
      <!-- SEARCH BAR   -->
-      <div class="search-bar-div">
+      <div class="search-bar-div d-flex justify-content-center">
         <%= form_tag root_path(anchor: 'search-results'), method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "search-bar",
+            class: "search-bar-input",
             placeholder: "Find a Class"
           %> <%= submit_tag "Search", class: "btn btn-ghost" %>
         <% end %>

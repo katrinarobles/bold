@@ -14,6 +14,9 @@ class Course < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_name,
     against: [ :name],
+    associated_against: {
+      occurences: [ :date, :location ]
+    },
     using: {
       tsearch: { prefix: true } # allows searches like 'yogam'
     }
