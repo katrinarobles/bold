@@ -1,7 +1,10 @@
 
 #mapboxgl-popup {
   width: 230px;
-  height: 300px;
+  max-height: 200px;
+  h6 {
+    font-weight: bold;
+  }
   img {
       width: 200px;
       height: auto;

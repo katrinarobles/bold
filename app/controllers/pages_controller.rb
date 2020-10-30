@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   def home
     @courses = Course.all
+    @occurences = Occurence.all
     if params[:query].present?
    #    sql_query = " \
    #      courses.name ILIKE :query \
@@ -9,15 +10,15 @@ class PagesController < ApplicationController
    #      OR user.name ILIKE :query \
    #  "
     #  @courses = Course.joins(:user).where(sql_query, query: "%#{params[:query]}%").limit(10)
-      @courses = Course.search_by_name_and_location(params[:query]).limit(10)
+      @courses = Course.search_by_name(params[:query]).limit(10)
     else
      @courses = Course.all.limit(10)
     end
-    @markers = @courses.geocoded.map do |course|
+    @markers = @occurences.geocoded.map do |occurence|
       {
-        lat: course.latitude,
-        lng: course.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+        lat: occurence.latitude,
+        lng: occurence.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { occurence: occurence })
       }
 
     end

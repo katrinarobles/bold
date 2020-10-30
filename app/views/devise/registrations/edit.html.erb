@@ -10,6 +10,10 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "name" }%>
+        <%= f.input :biography,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "biography" }%>
         <%= f.input :photo, as: :file %>
         <%= f.input :address,
                     required: true,
@@ -19,6 +23,14 @@
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "telephone" }%>
+        <%= f.input :facebook,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "facebook-link" }%>
+        <%= f.input :instagram,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "instagram-username" }%>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
