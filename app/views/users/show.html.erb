@@ -22,7 +22,7 @@
     <h6><%= date.day %></h6>
     <% @courses.each do |course| %>
       <% course.occurences.each do |occurence| %>
-        <% if occurence.date.to_datetime.to_date == date%>
+        <% if occurence.date.to_date == date%>
           <div class="border border-dark p-2 mb-2 ">
             <%= occurence.course.name%>
             <% if user_signed_in? %>
