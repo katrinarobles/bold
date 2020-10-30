@@ -44,7 +44,6 @@
 }
 
 .card-course h2 {
-  font-family: work-sans;
   color: black;
   font-size: 20px;
   margin: 0;
@@ -52,7 +51,7 @@
 }
 
 .card-course p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -163,6 +162,7 @@
   width: 420px;
   height: 340px;
   text-align: center;
+  height: 330px;
   justify-content: center;
   display: block;
   color: white;
@@ -171,11 +171,24 @@
   ul {
     list-style: none;
     padding-left: 0;
+    text-align: left;
+    margin-bottom: 0px;
   }
   li {
     font-weight: 400;
     font-size: 18px;
     text-shadow: none;
+  }
+  a {
+    font-weight: 400;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: none;
+  }
+  a:hover {
+    color: black;
   }
 }
 .card-info {

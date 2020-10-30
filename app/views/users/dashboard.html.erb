@@ -6,7 +6,7 @@
 <% if @user.teacher %>
 
     <div class="card-body">
-      <h4>My Info</h4>
+      <h4>My style of course</h4>
       <ul>
         <% @user.courses.each do  |course| %>
         <li> <%= course.name %> - <%= link_to 'POST', new_course_occurence_path(course.id) %> |
@@ -20,14 +20,16 @@
 
     </div>
 
-    <div class="container month-calendar">
-      <%= month_calendar do |date| %>
+    <div class="container week-calendar-2">
+      <%= week_calendar number_of_weeks: 2 do |date| %>
         <h6><%= date.day %></h6>
         <% @user.courses.each do |course| %>
           <% course.occurences.each do |occurence| %>
             <% if occurence.date.to_datetime.to_date == date%>
-              <div>
-                <%= occurence.course.name%> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+              <div class="border border-dark p-2 mb-2 ">
+                <%= occurence.course.name%> <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
+                <%= occurence.date %>
+                <%= link_to "info", course_path(occurence.course), class: "btn btn-outline-secondary py-0 my-2" %>
               </div>
             <% end %>
           <% end %>
@@ -50,8 +52,8 @@
 
     </div>
 
-    <div class="container month-calendar">
-      <%= month_calendar do |date| %>
+    <div class="container week-calendar-2">
+      <%= week_calendar number_of_weeks: 2 do |date| %>
         <h6><%= date.day %></h6>
         <% @user.bookings.each do |booking| %>
             <% if booking.occurence.date.to_datetime.to_date == date%>

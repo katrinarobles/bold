@@ -11,8 +11,12 @@ class BookingsController < ApplicationController
     @course = Course.find(params[:course_id])
     # @booking.course = @course
     @booking.user = current_user
-    @booking.save
-    redirect_to dashboard_path
+    if @booking.occurence.date.to_datetime.past? || @booking.occurence.bookings.count > @booking.occurence.capacity
+      render :new
+    else
+      @booking.save
+      redirect_to dashboard_path
+    end
   end
 
   def destroy
