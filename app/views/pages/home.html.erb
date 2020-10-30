@@ -4,8 +4,9 @@
       <img class="bold-logo" src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" alt="bold-logo">
     </div>
 
+     <!-- SEARCH BAR   -->
       <div class="search-bar-div">
-        <%= form_tag root_path, method: :get do %>
+        <%= form_tag root_path(anchor: 'search-results'), method: :get do %>
           <%= text_field_tag :query,
             params[:query],
             class: "search-bar",
@@ -15,10 +16,9 @@
       </div>
   </div>
 </div>
-
-<div class="m-2">
+<div id='search-results' class="m-2">
   <div style="display: flex;">
-    <div id="course-card-div">
+    <div id="course-card-div" class="height: 200px; overflow-auto">
   <!--     <div class="course-card-row"> -->
        <% @courses.each do  |course| %>
         <div class="card-course">
