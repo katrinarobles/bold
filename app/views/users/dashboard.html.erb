@@ -42,8 +42,8 @@
       <h4>My Info</h4>
       <ul>
         <i class="fas fa-envelope"></i><li>  <%= @user.email.upcase %> </li>
-        <i class="fas fa-map-marker-alt"></i><li>  <%= @user.telephone.upcase %> </li>
         <i class="fas fa-phone"></i><li>  <%= @user.address.upcase %> </li>
+        <i class="fas fa-map-marker-alt"></i><li>  <%= @user.telephone.upcase %> </li>
       </ul>
       <h2><%= link_to 'Edit My Info', edit_user_registration_path, class: 'btn btn-outline-success' %></h2>
       <h2><%= link_to 'Book More Classes', root_path, class: 'btn btn-outline-success' %></h2>
