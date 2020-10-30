@@ -31,10 +31,10 @@
   }
 
   .search-bar {
-    border-radius: 5px;
-    height: 50px;
+    border-radius: 12px;
+    height: 60px;
     padding-left: 10px;
-    width: 60%;
+    width: 600px;
     border-color: white;
     opacity: 76%;
   }
@@ -57,34 +57,67 @@
     // margin-top: 200px;
   }
 
+#fade-in {
+animation: fadeIn ease 5s;
+-webkit-animation: fadeIn ease 5s;
+-moz-animation: fadeIn ease 5s;
+-o-animation: fadeIn ease 5s;
+-ms-animation: fadeIn ease 5s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+#fade-in {
+animation: fadeIn ease 5s;
+-webkit-animation: fadeIn ease 5s;
+-moz-animation: fadeIn ease 5s;
+-o-animation: fadeIn ease 5s;
+-ms-animation: fadeIn ease 5s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
 }
