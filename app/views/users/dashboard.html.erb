@@ -28,7 +28,8 @@
             <% if occurence.date.to_datetime.to_date == date%>
               <div class="border border-dark p-2 mb-2 ">
                 <%= occurence.course.name%> <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
-                <%= link_to "more info", course_path(occurence.course) %>
+                <%= occurence.date %>
+                <%= link_to "info", course_path(occurence.course), class: "btn btn-outline-secondary py-0 my-2" %>
               </div>
             <% end %>
           <% end %>

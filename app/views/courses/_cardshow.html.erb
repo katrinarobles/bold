@@ -3,10 +3,10 @@
 <% if user_signed_in? %>
   <% if !current_user.teacher or current_user.nil? %>
   <span>
-    <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
+    <% if @course.occurence.date.to_datetime.present? || @course.occurence.date.to_datetime.future? %>
+      <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
+    <% end %>
   </span>
-  <% elsif @course.user == current_user %>
-    <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
   <% end %>
 <% else %>
   <%= link_to 'sign in to book', new_user_session_path %>

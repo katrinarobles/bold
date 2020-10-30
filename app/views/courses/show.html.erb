@@ -14,12 +14,12 @@
 </div>
 </div>
 
-<div class="occurence">
- <% @course.occurences.each do |occurence| %>
+  <div class="occurence">
+   <% @course.occurences.each do |occurence| %>
 
-<%= render "cardshow", locals: {occurence: occurence} %>
+  <%= render "cardshow", locals: {occurence: occurence} %>
 
-<% end %>
+  <% end %>
 
-</div>
+  </div>
 

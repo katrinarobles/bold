@@ -13,9 +13,15 @@ class OccurencesController < ApplicationController
     @course = Course.find(params[:course_id])
     @occurence.course = @course
     # @occurence.user = current_user
-    @occurence.save
-    # redirect_to course_occurence_path(@course) // not working
-    redirect_to dashboard_path
+    if @occurence.date.to_datetime.past?
+      render :new
+    else
+      @occurence.save
+      # redirect_to course_occurence_path(@course) // not working
+      redirect_to dashboard_path
+    end
+    # @occurence.save
+    # redirect_to dashboard_path
   end
 
   def destroy
