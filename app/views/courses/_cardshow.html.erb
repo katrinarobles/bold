@@ -3,9 +3,7 @@
 <% if user_signed_in? %>
   <% if !current_user.teacher or current_user.nil? %>
   <span>
-    <% if @course.occurence.date.to_datetime.present? || @course.occurence.date.to_datetime.future? %>
-      <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
-    <% end %>
+    <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
   </span>
   <% end %>
 <% else %>
