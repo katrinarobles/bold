@@ -24,6 +24,7 @@ User.destroy_all
 # images = JSON.parse(images_serialized)
 
 url = 'https://source.unsplash.com/500x500/?face'
+url_course = 'https://source.unsplash.com/700x700/?yoga'
 addresses = ['Via Solferino, 34, 20121 Milano MI', 'Largo la Foppa, 5, 20121 Milano MI', 'Galleria del Corso, 4, 20122 Milano MI', 'Via S. Maurilio, 20, 20123 Milano MI', 'Via Palestro, 16, 20121 Milano MI', 'Via Fatebenefratelli, 2, 20121 Milano MI', 'Via dei Fabbri, 1, 20123 Milano MI', 'Via San Vittore, 2, 20123 Milano MI', 'Via Archimede, 14, 20129 Milano MI', 'Via Conchetta, 8, 20136 Milano MI', 'Alzaia Naviglio Pavese, 78/3, 20142 Milano MI', 'Via Tortona, 56, 20144 Milano MI', 'Via Lazzaro Spallanzani, 16, 20129 Milano MI', 'Via Clerici, 5, 20121 Milano MI', 'Via Tivoli, 3, 20121 Milano MI']
 
 
@@ -49,7 +50,7 @@ end
 puts 'Finished!'
 
 
-puts 'Creating 20 students'
+puts 'Creating 10 students'
 s_count = 1
 10.times do
   # photo_url = images["hits"].map do |photo|
@@ -72,11 +73,13 @@ puts 'Finished!'
 
 
 puts 'Creating 4 courses for each teacher'
+c_count = 0
 types = ["Vinyasa yoga", "Hatha yoga", "Iyengar yoga", "Kundalini yoga", "Ashtanga yoga", "Bikram yoga", "Yin yoga", "Restorative yoga"]
 descriptions = ["Linking breath with movement.", "Yoga poses are performed more quickly and with added core exercises and upper body work.", "This practice is usually twelve basic postures or variations of the Asanas, with Sun Salutations and Savasana.", "This practice focuses on lengthening the connective tissues within the body", "A delicious way to relax and soothe frayed nerves"]
 durations = [30, 45, 50, 60, 75, 90]
 User.where(teacher: true).each do |teacher|
   4.times do
+    file_course = URI.open(url_course)
     course = Course.new(
       name: "#{types.sample}",
       description: "#{descriptions.sample}",
@@ -84,8 +87,9 @@ User.where(teacher: true).each do |teacher|
       price: (10..20).to_a.sample,
       # Lily
       # location: "#{Faker::Address.full_address}",
-      location: "#{addresses.sample}",
     )
+    course.photo.attach(io: file_course, filename: "course#{c_count}.png", content_type: 'image/png')
+    c_count += 1
     course.user = teacher
     course.save
   end
@@ -98,8 +102,9 @@ times = ["7:00", "9:00", "11:00", "16:00", "18:00", "20:00"]
 Course.all.each do |course|
   3.times do
     occurence = Occurence.new(
-      date: DateTime.parse("#{Faker::Time.forward(days: 20,  period: :day)}"),
-      capacity: (10..20).to_a.sample
+      date: "#{Faker::Time.forward(days: 20,  period: :day)}",
+      capacity: (10..20).to_a.sample,
+      location: "#{addresses.sample}",
     )
     occurence.course = course
     occurence.save

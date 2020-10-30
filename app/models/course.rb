@@ -6,17 +6,14 @@ class Course < ApplicationRecord
   validates :description, presence: true, length: { maximum: 500 }
   validates :duration, presence: true, numericality: { only_integer: true }
   validates :price, presence: true, numericality: { only_integer: true }
-  validates :location, presence: true
 
+  has_one_attached :photo
   validates_associated :occurences
   validates :user, presence: true
 
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
-
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_location,
-    against: [ :name, :location ],
+  pg_search_scope :search_by_name,
+    against: [ :name],
     using: {
       tsearch: { prefix: true } # allows searches like 'yogam'
     }

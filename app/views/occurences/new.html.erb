@@ -2,6 +2,7 @@
   <%= simple_form_for [ @course, @occurence ] do |f| %>
     <%= f.input :date, input_html: {class: "datepicker"} %>
     <%= f.input :capacity %>
+    <%= f.input :location %>
     <%= f.submit %>
   <% end %>
 <% else %>

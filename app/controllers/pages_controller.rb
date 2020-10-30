@@ -3,17 +3,19 @@ class PagesController < ApplicationController
 
   def home
     @courses = Course.all
+    @occurences = Occurence.all
     if params[:query].present?
-      @courses = Course.search_by_name_and_location(params[:query])
+      @courses = Course.search_by_name(params[:query])
     else
       @courses = Course.all
     end
+    
+    @markers = @occurences.geocoded.map do |occurence|
 
-    @markers = @courses.geocoded.map do |course|
       {
-        lat: course.latitude,
-        lng: course.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { course: course })
+        lat: occurence.latitude,
+        lng: occurence.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { occurence: occurence })
       }
     end
   end

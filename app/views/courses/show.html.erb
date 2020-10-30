@@ -7,7 +7,6 @@
 <div class="course-info">
   <h2 class="cards-header" style="padding: 10px; color: #018a79; font-family: pacifico; "><%= @course.name %> </h2>
   <div class="card-show-info" label="description"> <%= @course.description %> </div>
-  <div class="card-show-info"><%= @course.location %></div>
   <div class="card-show-info" style="text-align: right; font-weight: bolder; font-size: 24px;"> € <%= @course.price %> </div>
   <p>More info about the instructor:</p>
   <p><%= link_to @course.user.name, user_path(@course.user.id), class: "btn btn-outline-success" %></p>
