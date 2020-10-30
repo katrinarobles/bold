@@ -39,7 +39,9 @@
               <% if current_user.teacher %>
                 <p class="mb-0">(<i class="fas fa-users"></i> <%= occurence.bookings.size%> joined) </p>
               <% else %>
-                <p class="mb-0"><%= link_to 'book', new_course_booking_path(course), class: "btn btn-outline-secondary py-0 my-2"%></p>
+                <% if occurence.date.to_datetime.today? || occurence.date.to_datetime.future?  %>
+                  <p class="mb-0"><%= link_to 'book', new_course_booking_path(course), class: "btn btn-outline-secondary py-0 my-2"%></p>
+                <% end %>
               <% end %>
             <% end %>
           </div>
