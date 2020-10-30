@@ -157,8 +157,8 @@
   max-height: 500px;
   max-width: 420px;
   width: 420px;
-  height: 330px;
   text-align: center;
+  height: 330px;
   justify-content: center;
   display: block;
   color: white;
@@ -167,11 +167,24 @@
   ul {
     list-style: none;
     padding-left: 0;
+    text-align: left;
+    margin-bottom: 0px;
   }
   li {
     font-weight: 400;
     font-size: 18px;
     text-shadow: none;
+  }
+  a {
+    font-weight: 400;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: none;
+  }
+  a:hover {
+    color: black;
   }
 }
 .card-info {
