@@ -2,8 +2,9 @@
 <div class="container-class" style="margin: 20px; border: 2px solid #018a79; text-align: center; height: auto;">
 <div class="container-course-info">
 <div class="course-img">
-<img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
-</div>
+<%= cl_image_tag @course.photo.key, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<!-- <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
+ --></div>
 <div class="course-info">
   <h2 class="cards-header" style="padding: 10px; color: #018a79; font-family: pacifico; "><%= @course.name %> </h2>
   <div class="card-show-info" label="description"> <%= @course.description %> </div>
