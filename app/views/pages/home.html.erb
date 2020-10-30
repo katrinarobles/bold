@@ -1,34 +1,42 @@
 <div id="search-bar">
   <div class="background-image" style="background-image: url(<%= asset_path'landing_background.jpg'%>)">
     <div class="bold-logo-div">
-      <img class="bold-logo" src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" alt="bold-logo">
+      <img class="bold-logo" id="fade-in" src="https://res.cloudinary.com/dolfny7hf/image/upload/v1603809296/Bold_est1tz.png" alt="bold-logo">
     </div>
 
+     <!-- SEARCH BAR   -->
       <div class="search-bar-div">
-        <%= form_tag root_path, method: :get do %>
+        <%= form_tag root_path(anchor: 'search-results'), method: :get do %>
           <%= text_field_tag :query,
             params[:query],
             class: "search-bar",
             placeholder: "Find a Class"
           %> <%= submit_tag "Search", class: "btn btn-ghost" %>
         <% end %>
+
+        <form class="search-form">
+          <input class="search-bar" type="search" placeholder="Type of Yoga">
+        <a class="btn btn-ghost" href="#">Search</a>
+        </form>
       </div>
   </div>
 </div>
-
-<div class="m-2">
+<div id='search-results' class="m-2">
   <div style="display: flex;">
-    <div id="course-card-div">
+    <div id="course-card-div" class="height: 200px; overflow-auto">
   <!--     <div class="course-card-row"> -->
        <% @courses.each do  |course| %>
         <div class="card-course">
 
           <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
             <div class="card-course-infos">
-              <h2><%= course.name.upcase %></h2>
-              <%= link_to 'details', course_path(course), class: "btn btn-outline-success" %>
+              <h2><%= course.name %></h2>
+              <h2><%= course.user.name %></h2>
             </div>
-        </div>
+            <div class="button-link-to">
+              <div class="link-to"><%= link_to 'details', course_path(course), class: "btn btn-outline-success" %></div>
+            </div>
+      </div>
        <% end %>
       <!-- </div> -->
     </div>
@@ -38,11 +46,7 @@
          data-markers='<%= @markers.to_json %>'
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
-
-
   </div>
-
 </div>
 
 
