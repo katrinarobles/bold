@@ -6,7 +6,7 @@
 <% if @user.teacher %>
 
     <div class="card-body">
-      <h4>My Info</h4>
+      <h4>My style of course</h4>
       <ul>
         <% @user.courses.each do  |course| %>
         <li> <%= course.name %> - <%= link_to 'POST', new_course_occurence_path(course.id) %> |
