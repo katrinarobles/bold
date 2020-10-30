@@ -12,21 +12,14 @@
   <p><%= link_to @course.user.name, user_path(@course.user.id), class: "btn btn-outline-success" %></p>
 </div>
 </div>
+</div>
+
 <div class="occurence">
  <% @course.occurences.each do |occurence| %>
 
 <%= render "cardshow", locals: {occurence: occurence} %>
-<div class="link-courses">
+
 <% end %>
-<% if user_signed_in? %>
-  <% if !current_user.teacher or current_user.nil? %>
-    <%= link_to 'book', new_course_booking_path(@course), class: "btn btn-outline-success" %>
-  <% elsif @course.user == current_user %>
-    <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
-  <% end %>
-<% else %>
-  <%= link_to 'sign in to book', new_user_session_path %>
+
 </div>
-</div>
-<% end %>
-</div>
+
