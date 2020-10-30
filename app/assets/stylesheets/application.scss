@@ -31,7 +31,13 @@ body {
     width: 966px;
   }
   .navbar {
-    max-width: 966px;
+    width: 100%;
+  }
+  #search-bar {
+    width: 100%;
+  }
+  .search-bar {
+    width: 100%;
   }
   .card-course {
     grid-template-columns: 1fr;
@@ -42,6 +48,9 @@ body {
   .card-info {
     overflow: scroll;
   }
+  .bold-logo-div {
+    margin-left: 50px;
+  }
 }
 
 @media(max-width: 768px) {
@@ -49,8 +58,19 @@ body {
     width: 650px;
   }
    .navbar {
-    max-width: 650px;
+    width: 100%;
   }
+  #search-bar {
+    width: 100%;
+  }
+  .search-bar {
+    width: 100%;
+  }
+
+.search-bar-div form {
+  display: block;
+}
+
   .card-course {
     grid-template-columns: 1fr;
   }
@@ -59,5 +79,8 @@ body {
   }
    .card-info {
     overflow: scroll;
+  }
+  .bold-logo-div {
+    margin-left: 0px;
   }
 }

@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 
 #search-bar {
+    min-height: calc(100vh - 66px);
+
   .btn-ghost {
     color: white;
     border: 1px solid white;
@@ -24,32 +26,34 @@
   }
 
   .background-image {
-    height: calc(100vh - 66px);
+    min-height: calc(100vh - 66px);
     width: auto;
     background-size: cover;
     background-position: center;
   }
 
-  .search-bar {
+  .search-bar-input {
     border-radius: 12px;
     height: 60px;
     padding-left: 10px;
-    width: 600px;
+    width: 70%;
     border-color: white;
     opacity: 76%;
   }
 
+  .search-bar-div form {
+    width: 80%;
+    margin: 10px auto;
+  }
   .search-bar-div {
   margin-top: 50px;
-  margin-left: 350px;
 
   }
 
   .bold-logo {
     height: 100px;
-    width: 200px;
+    max-width: 200px;
     margin-top: 200px;
-    margin-left: 550px;
 
   }
 
