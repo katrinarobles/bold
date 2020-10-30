@@ -10,8 +10,10 @@
   height: 120px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   width: auto;
   margin-top: 15px;
   margin-left: 10px;
@@ -35,31 +37,36 @@
     // height: 100px;
 }
 
-  .card-course img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-
+.card-course img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
 
 .card-course h2 {
+  font-family: work-sans;
   color: black;
   font-size: 20px;
   margin: 0;
   padding: 10px;
 }
 
-  .card-course p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
+.card-course p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
 
-  .card-course .card-course-infos {
-    padding: 16px;
-  }
+.card-course .card-course-infos {
+  text-align: left;
+  padding-top: 10px;
+  // padding: 16px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // space-between: 20px;
+}
 
 .course-card-row {
   display: flex;
@@ -79,19 +86,22 @@
 
 }
 
+
+
+
 .card-category {
   background-size: cover;
   background-position: center;
   height: 180px;
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-show {
@@ -113,11 +123,9 @@
 .cards-header{
   font-weight:bold;
 }
-
 .cards-parag{
   font-size: 20px;
 }
-
 .card-show-info {
   background-color: #fff;
   background-size: cover;
@@ -130,7 +138,6 @@
   font-size: 18px;
   border-radius: 5px;
 }
-
 .card-category-teacher {
   height: 200px;
   justify-content: space-between;
@@ -142,7 +149,6 @@
     text-shadow: none;
   }
 }
-
 .card-relative {
   position: relative;
   background-color: rgba(34, 112, 103,0.7);
@@ -168,7 +174,6 @@
     text-shadow: none;
   }
 }
-
 .card-info {
   background-color: rgba(0, 0, 0, 0.1);
   color: rgb(60, 60, 60);
@@ -181,6 +186,20 @@
   height: 120px;
   max-width: 800px;
   font-size: 18px;
+}
+
+.button-link-to {
+  position: relative;
+  width: 100%;
+}
+
+.link-to {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px
 }
 
 
