@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_112339) do
   end
 
   create_table "occurences", force: :cascade do |t|
-    t.string "date"
+    t.datetime "date"
     t.bigint "course_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

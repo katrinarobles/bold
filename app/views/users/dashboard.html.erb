@@ -25,7 +25,7 @@
         <h6><%= date.day %></h6>
         <% @user.courses.each do |course| %>
           <% course.occurences.each do |occurence| %>
-            <% if occurence.date.to_datetime.to_date == date%>
+            <% if occurence.date.to_date == date%>
               <div>
                 <%= occurence.course.name%> - <%= link_to course_occurence_path(course, occurence), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
               </div>
@@ -54,7 +54,7 @@
       <%= month_calendar do |date| %>
         <h6><%= date.day %></h6>
         <% @user.bookings.each do |booking| %>
-            <% if booking.occurence.date.to_datetime.to_date == date%>
+            <% if booking.occurence.date.to_date == date%>
               <div>
                 <%= booking.occurence.course.name.upcase %> - <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure you would like to delete?" } do %> <i class="far fa-trash-alt"></i> <% end %>
               </div>
