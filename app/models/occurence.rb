@@ -16,3 +16,4 @@ class Occurence < ApplicationRecord
     "#{date}"
   end
 end
+

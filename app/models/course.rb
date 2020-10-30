@@ -20,4 +20,14 @@ class Course < ApplicationRecord
     using: {
       tsearch: { prefix: true } # allows searches like 'yogam'
     }
+
+    def todays_occurences
+      todays_occurences = []
+      self.occurences.each do |occurence|
+        if occurence.date.split.first == Date.today.to_s
+          todays_occurences.push(occurence)
+        end
+      end
+      return todays_occurences
+    end
 end
