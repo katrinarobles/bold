@@ -1,6 +1,8 @@
+<div class="container-lg" id="box-book">
 <% if !current_user.teacher %>
   <%= simple_form_for [ @course, @booking ] do |f| %>
     <%= f.association :occurence, collection: details = @occurences, prompt: "Select time", label_method: :slot, value_method: :id  %>
-    <%= f.submit %>
+    <%= f.submit "BOOK", class: "btn btn-outline-success" %>
   <% end %>
 <% end %>
+</div>

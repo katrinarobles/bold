@@ -1,10 +1,12 @@
+<div class="container-lg">
 <% if current_user.teacher %>
   <%= simple_form_for [ @course, @occurence ] do |f| %>
     <%= f.input :date, input_html: {class: "datepicker"} %>
     <%= f.input :capacity %>
     <%= f.input :location %>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-outline-success" %>
   <% end %>
 <% else %>
   <h2>you cannot view this page</h2>
 <% end %>
+</div>

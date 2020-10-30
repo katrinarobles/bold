@@ -9,6 +9,6 @@
     <%= link_to 'destroy', course_path(@course), method: :delete, data: { confirm: "Are you sure you would like to delete?" } %>
   <% end %>
 <% else %>
-  <%= link_to 'sign in to book', new_user_session_path %>
+  <%= link_to 'sign in', new_user_session_path, class: "btn btn-outline-success" %>
 <% end %>
 </div>
