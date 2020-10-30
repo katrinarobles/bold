@@ -17,7 +17,15 @@
       </ul>
 
       <h2><%= link_to 'ADD', new_course_path, class: 'btn btn-outline-success' %></h2>
-
+        <div class="courses-of-today" style="margin-top: 130px; ">
+          <h4>Courses of today</h4>
+          <% @user.courses.each do |course| %>
+            <% course.todays_occurences.each do |occurence| %>
+               <%= course.name %>
+              <%= occurence.date %>
+            <% end %>
+          <% end %>
+        </div>
     </div>
 
     <div class="container month-calendar">
