@@ -22,8 +22,11 @@
   <!--     <div class="course-card-row"> -->
        <% @courses.each do  |course| %>
         <div class="card-course">
-          <%= cl_image_tag course.photo.key, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+          <% if course.photo.attached? %>
+            <%= cl_image_tag course.photo.key, id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
+          <% end %>
 <!--           <img src="https://res.cloudinary.com/dgmgwjok1/image/upload/c_scale,q_100,w_300/v1603823158/dane-wetton-t1NEMSm1rgI-unsplash_vyigoa.jpg" alt="course-image">
  -->            <div class="card-course-infos">
               <h2><%= course.name.upcase %></h2>
